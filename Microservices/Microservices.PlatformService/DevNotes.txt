@@ -1,0 +1,5 @@
+﻿Debug\General\IIS Express\App URL: https://localhost:7092;http://localhost:20888
+
+docker build -f "Microservices\Microservices.PlatformService\Dockerfile" -t pauliuskutkaitis/platformservice .
+docker run -p 8080:80 -d pauliuskutkaitis/platformservice
+docker push pauliuskutkaitis/platformservice
