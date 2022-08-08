@@ -3,3 +3,5 @@
 docker build -f "Microservices\Microservices.PlatformService\Dockerfile" -t pauliuskutkaitis/platformservice .
 docker run -p 8080:80 -d pauliuskutkaitis/platformservice
 docker push pauliuskutkaitis/platformservice
+
+dotnet ef migrations add initialmigration

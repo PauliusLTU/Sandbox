@@ -1,0 +1,3 @@
+﻿docker build -f "Microservices\Microservices.CommandsService\Dockerfile" -t pauliuskutkaitis/commandservice .
+docker run -p 8080:80 pauliuskutkaitis/commandservice
+docker push pauliuskutkaitis/commandservice

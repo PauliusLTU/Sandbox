@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.PlatformServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.K8S", "Microservices\Microservices.K8S\Microservices.K8S.csproj", "{E72948EA-5329-4BFF-A477-24A0F7B021A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.CommandsService", "Microservices\Microservices.CommandsService\Microservices.CommandsService.csproj", "{717134AE-3E17-4168-8768-8C1CA8E901AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{E72948EA-5329-4BFF-A477-24A0F7B021A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E72948EA-5329-4BFF-A477-24A0F7B021A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E72948EA-5329-4BFF-A477-24A0F7B021A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717134AE-3E17-4168-8768-8C1CA8E901AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717134AE-3E17-4168-8768-8C1CA8E901AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717134AE-3E17-4168-8768-8C1CA8E901AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717134AE-3E17-4168-8768-8C1CA8E901AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{04652CFF-CCF9-4587-84D2-683965A1DA7A} = {82214B28-6799-49BF-AC04-935E7E22247F}
 		{E72948EA-5329-4BFF-A477-24A0F7B021A6} = {82214B28-6799-49BF-AC04-935E7E22247F}
+		{717134AE-3E17-4168-8768-8C1CA8E901AD} = {82214B28-6799-49BF-AC04-935E7E22247F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01FFA17E-0A0F-492D-9C5B-2C4BA291A6A7}

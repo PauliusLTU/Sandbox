@@ -1,9 +1,26 @@
 ﻿kubectl version
-
-kubectl apply -f platforms-depl.yaml
 kubectl get deployments
 kubectl get pods
+kubectl get services
+
+kubectl apply -f platforms-depl.yaml
+kubectl rollout restart deployment platforms-depl
 kubectl delete deployments platforms-depl
 
 kubectl apply -f platforms-np-srv.yaml
-kubectl get services
+
+kubectl apply -f commands-depl.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/aws/deploy.yaml
+kubectl get pods --namespace=ingress-nginx
+kubectl get services --namespace=ingress-nginx
+
+kubectl apply -f ingress-srv.yaml
+
+kubectl get storageclass
+kubectl apply -f local-pvc.yaml
+kubectl get pvc
+
+kubectl create secret generic mssql --from-literal=SA_PASSWORD="0DL3CTr1TUDe"
+
+kubectl apply -f mssql-plat-depl.yaml
