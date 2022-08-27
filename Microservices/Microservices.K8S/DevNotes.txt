@@ -10,6 +10,7 @@ kubectl delete deployments platforms-depl
 kubectl apply -f platforms-np-srv.yaml
 
 kubectl apply -f commands-depl.yaml
+kubectl rollout restart deployment commands-depl
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/aws/deploy.yaml
 kubectl get pods --namespace=ingress-nginx
@@ -22,5 +23,6 @@ kubectl apply -f local-pvc.yaml
 kubectl get pvc
 
 kubectl create secret generic mssql --from-literal=SA_PASSWORD="0DL3CTr1TUDe"
-
 kubectl apply -f mssql-plat-depl.yaml
+
+kubectl apply -f rabbitmq-depl.yaml

@@ -32,6 +32,11 @@ namespace Microservices.CommandsService.Data
             _context.Platforms.Add(platform);
         }
 
+        bool ICommandRepo.ExternalPlatformExits(int externalPlatformId)
+        {
+            return _context.Platforms.Any(p => p.ExternalId == externalPlatformId);
+        }
+
         IEnumerable<Platform> ICommandRepo.GetAllPlatforms()
         {
             return _context.Platforms;
