@@ -1,5 +1,6 @@
 using Microservices.PlatformService.AsyncDataServices;
 using Microservices.PlatformService.Data;
+using Microservices.PlatformService.SyncDataServices.Grpc;
 using Microservices.PlatformService.SyncDataServices.Http;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +32,7 @@ services.AddScoped<IPlatformRepo, PlatformRepo>();
 services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 services.AddSingleton<IMessageBusClient, MessageBusClient>();
 services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+services.AddGrpc();
 
 services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -53,6 +55,11 @@ if (env.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGrpcService<GrpcPlatformService>();
+app.MapGet("/protos/platforms.proto", async context =>
+{
+    await context.Response.WriteAsync(File.ReadAllText("Protos/platforms.proto"));
+});
 
 Console.WriteLine($"--> CommandService Endpoint {configuration["CommandService"]}");
 
